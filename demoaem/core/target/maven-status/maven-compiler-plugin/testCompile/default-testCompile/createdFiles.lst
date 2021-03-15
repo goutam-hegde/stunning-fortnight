@@ -1,0 +1,5 @@
+com\adobe\aem\guides\demoaem\core\models\HelloWorldModelTest.class
+com\adobe\aem\guides\demoaem\core\schedulers\SimpleScheduledTaskTest.class
+com\adobe\aem\guides\demoaem\core\listeners\SimpleResourceListenerTest.class
+com\adobe\aem\guides\demoaem\core\servlets\SimpleServletTest.class
+com\adobe\aem\guides\demoaem\core\filters\LoggingFilterTest.class

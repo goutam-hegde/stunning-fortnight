@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: AEM Project - UI content
+Content-Package-Roots: /conf/demoaem,/content/dam/demoaem,/content/dem
+ oaem
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ADMIN
+Implementation-Vendor-Id: com.mindtree
+Content-Package-Type: content
+Created-By: Apache Maven
+Build-Jdk: 1.8.0_271
+Content-Package-Description: UI content package for AEM Project
+Content-Package-Id: aem:demoaem.ui.content:0.0.1-SNAPSHOT
+

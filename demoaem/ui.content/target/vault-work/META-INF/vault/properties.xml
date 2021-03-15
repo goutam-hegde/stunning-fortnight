@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>AEM Project - UI content</comment>
+<entry key="createdBy">ADMIN</entry>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="name">demoaem.ui.content</entry>
+<entry key="acHandling">merge_preserve</entry>
+<entry key="created">2021-02-19T09:18:34.908+05:30</entry>
+<entry key="groupId">com.mindtree</entry>
+<entry key="version">0.0.1-SNAPSHOT</entry>
+<entry key="packageType">content</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">aem</entry>
+<entry key="description">UI content package for AEM Project</entry>
+<entry key="artifactId">demoaem.ui.content</entry>
+</properties>
