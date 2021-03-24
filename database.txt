@@ -1,0 +1,78 @@
+--------util-----------------
+package com.mindtree.registration.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBConnection {
+	public static Connection createConnection() {
+		Connection con = null;
+		String url = "jdbc:mysql://localhost:3306/jsp_project"; 
+		String username = "root"; // MySQL username
+		String password = "root"; 
+		System.out.println("In DBConnection.java class ");
+
+		try {
+			
+			try
+	         {
+	            Class.forName("com.mysql.jdbc.Driver");  
+	         } 
+	         catch (ClassNotFoundException e)
+	         {
+	            e.printStackTrace();
+	         }       
+
+			con = DriverManager.getConnection(url, username, password); 
+			System.out.println("Printing connection object " + con);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+}
+
+
+---------------------dao--------------------------
+package com.mindtree.registration.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.mindtree.registration.entity.LoginBean;
+import com.mindtree.registration.util.DBConnection;
+
+public class LoginDao {
+	public String authenticateUser(LoginBean loginBean) {
+		String userName = loginBean.getUserName();
+		String password = loginBean.getPassword();
+
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+
+		String userNameDB = "";
+		String passwordDB = "";
+
+		try {
+			con = DBConnection.createConnection();
+			statement = con.createStatement();
+			resultSet = statement.executeQuery("select userName,password from users");
+			while (resultSet.next()) {
+				userNameDB = resultSet.getString("userName");
+				passwordDB = resultSet.getString("password");
+
+				if (userName.equals(userNameDB) && password.equals(passwordDB)) {
+					return "SUCCESS";
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return "Invalid user credentials";
+
+	}
+}
+-------------------------
